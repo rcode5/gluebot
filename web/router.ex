@@ -1,17 +1,9 @@
 defmodule Gluebot.Router do
+  #use Phoenix.Router
   use Gluebot.Web, :router
 
-  pipeline :browser do
-    plug :accepts, ["html"]
-    plug :fetch_session
-    plug :fetch_flash
-    plug :protect_from_forgery
-    plug :put_secure_browser_headers
-  end
-
   pipeline :api do
-    plug :accepts, ["json", "HTML"]
-    get "/bunnymatic", Gluebot.SlashCommandController, :bunnymatic
+    plug :accepts, ["json"]
   end
 
   # scope "/", Gluebot do
@@ -21,7 +13,9 @@ defmodule Gluebot.Router do
   # end
 
   # Other scopes may use custom stacks.
-  scope "/", Gluebot do
+  scope "/", alias: Gluebot do
     pipe_through :api
+    
+    get "/bunnymatic", SlashCommandController, :bunnymatic
   end
 end
