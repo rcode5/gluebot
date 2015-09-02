@@ -10,17 +10,18 @@ defmodule Gluebot.Router do
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug :accepts, ["json", "HTML"]
+    get "/bunnymatic", Gluebot.SlashCommandController, :bunnymatic
   end
 
-  scope "/", Gluebot do
-    pipe_through :browser # Use the default browser stack
+  # scope "/", Gluebot do
+  #   pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
-  end
+  #   get "/", PageController, :index
+  # end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Gluebot do
-  #   pipe_through :api
-  # end
+  scope "/", Gluebot do
+    pipe_through :api
+  end
 end
