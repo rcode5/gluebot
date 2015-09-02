@@ -13,9 +13,10 @@ defmodule Gluebot.Router do
   # end
 
   # Other scopes may use custom stacks.
-  scope "/", alias: Gluebot do
+  scope "/api", alias: Gluebot do
     pipe_through :api
-    
+
     get "/bunnymatic", SlashCommandController, :show
+    post "/bunnymatic", SlashCommandController, :show
   end
 end

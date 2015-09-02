@@ -1,8 +1,8 @@
-defmodule Gluebot.PageControllerTest do
-  use Gluebot.ConnCase
+# defmodule Gluebot.PageControllerTest do
+#   use Gluebot.ConnCase
 
-  test "GET /" do
-    conn = get conn(), "/"
-    assert html_response(conn, 200) =~ "Welcome to Phoenix!"
-  end
-end
+#   test "GET /" do
+#     conn = get conn(), "/"
+#     assert html_response(conn, 200) =~ "Welcome to Phoenix!"
+#   end
+# end
