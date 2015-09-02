@@ -1,7 +1,9 @@
 defmodule Gluebot.SlashCommandController do
   use Gluebot.Web, :controller
 
-  def bunnymatic(conn, _params) do
-    render(conn, 'bunnymatic.json')
+  plug :action
+  
+  def show(conn, _params) do
+    render conn, "show.html"
   end
 end

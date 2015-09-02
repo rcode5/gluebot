@@ -16,6 +16,6 @@ defmodule Gluebot.Router do
   scope "/", alias: Gluebot do
     pipe_through :api
     
-    get "/bunnymatic", SlashCommandController, :bunnymatic
+    get "/bunnymatic", SlashCommandController, :show
   end
 end

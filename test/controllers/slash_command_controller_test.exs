@@ -1,8 +1,8 @@
 defmodule Gluebot.SlashCommandControllerTest do
   use Gluebot.ConnCase
 
-  test "GET /bunnymatic" do
+  test "GET /bunyymatic" do
     conn = get conn(), "/bunnymatic"
-    assert json_response(conn, 200) =~ "{\"success\":true}"
+    assert html_response(conn, 200) =~ "robot for the modern world"
   end
 end
